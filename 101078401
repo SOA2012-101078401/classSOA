@@ -1,0 +1,23 @@
+In Ruby the math symbol can direct to use
+
+String
+
+Kilo.length  how many words in “kilo”
+
+to_s  converts things to strings
+to_i  converts thinds to integers(no)
+to_a  converts things to arrays
+
+[]  mean array  (are lists for storing things in order.)
+
+Ticket to store
+Sort  arrange
+
+Poem[‘word’] = ‘another word’  it can change the word to another word in the poem,but if there are two same word, you must type the command two times.
+
+poem.reverse  every letter will reverse
+
+poem.lines.to_a.reverse  just the lines reverse
+
+print poem.lines.to_a.reverse.join  Break up a poem, reverse it, reassemble it:
+
