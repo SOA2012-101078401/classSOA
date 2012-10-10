@@ -21,3 +21,110 @@ poem.lines.to_a.reverse  just the lines reverse
 
 print poem.lines.to_a.reverse.join  Break up a poem, reverse it, reassemble it:
 
+Hash(dictionary)
+
+•  :splendid → a masterpiece.
+•	:quite_good → enjoyed, sure, yes.
+•	:mediocre → equal parts great and terrible.
+•	:quite_not_good → notably bad.
+•	:abysmal → steaming wreck.
+
+books["Gravity's Rainbow"] = :splendid
+give an explanation to the subbooks
+
+: is symbol,symbols are cheaper than strings
+
+books.length means how many books in the “books”
+
+hashes won't keep things in order. That's not their job. It'll just pair up two things: a key and a value. In your reviews, the key is the book's title and the value is the rating.
+If you want to just see the titles of the books you've reviewed: books.keys
+
+Define
+ratings = Hash. new(0)
+
+count up
+books.values.each { |rate| ratings[rate] += 1 }
+
+ ratings to see the count.
+
+http://pastebin.com/F1Z3WnMw
+
+block
+
+time
+5.times { print "Odelay!" }
+
+•	Hashes. The little dictionary with the curly pages: {}.
+•	Symbols. Tiny, efficient code words with a colon::splendid.
+•	Blocks. Chunks of code which can be tacked on to many of Ruby's methods. Here's the code you used to build a scorecard:books.values.each { |rate| ratings[rate] += 1 }.
+On your computer, you probably have a lot of different files. Files with pictures in them, files with programs in them. And files are often organized into folders, also called:directories.
+
+Dir.entries entries is a method called on the Dir variable. And Dir has a collection of methods for checking out file directories.
+
+•	Dir.entries "/": Anything listed after a method is considered an attachment.
+•	print poem: See, print is an ordinary method. And the poem is attached. To be printed.
+•	print "pre", "event", "ual", "ism" has several arguments, with commas between them.
+To list just the text files in that directory:Dir["/*.txt"]
+Call the .txt in the “\” directory
+
+print File.read("/comics.txt")
+to open the “comics.txt”
+
+FileUtils.¬cp('/comics.txt', '/Home/comics.txt')
+Copy the” comics.txt” to /Home
+$the command FileUtils must capital letter
+
+
+File.open("/Home/comics.txt", "a") do |f|
+open the file in append mode
+
+and”<” become ”..” it can add the information you want….
+And end can close the append mode
+
+ You opened a new block when you typed do. So far the blocks we've seen have used curly braces. This time we'll be using do and endinstead of curly braces. A lot of Rubyists will use do...endwhen the block goes on for many lines.
+
+print File.read("/Home/comics.txt")
+to see the body of .txt
+
+File.mtime("/Home/comics.txt")
+Check the time you changed the file
+
+File.mtime("/Home/comics.txt").hour
+
+•	Files. What more can be said? Lots of methods for editing files and lookin around in directories.
+•	Arguments. Arguments are a list of things sent into a method. With commas between.
+•	We also spoke about do and end which are another way to make a block.
+
+load_comics
+def load_comics( path )
+
+comics = {}
+  File.foreach(path) do |line|
+    name, url = line.split(': ')
+    comics[name] = url.strip
+  end
+  comics
+end
+comics = load_comics('/comics.txt')
+
+
+
+•	File.foreach is a method which opens a file and hands each line to the block. The line variable inside the do...end block took turns with each line in the file.
+•	split is a method for strings, which breaks the string up into an array. An axe is laid on the colon and the line is chopped in half, giving us the url and name for each comic.
+•	strip removes extra spaces around the name. Just in case.
+
+
+require 'popup'
+
+The popup library contains a bunch of methods I've written which let you control a popup here on the Try Ruby site.
+
+Popup.goto http://ruby-lang.org
+
+Here, try this: Popup.goto "http://ruby-lang.org"
+Then look at the "Popup" tab that appeared up there. Click it to see the website you just loaded, and try another one if you feel like it.
+
+Popup.make {
+  h1 "My Links"
+  link "Go to Ruby", "http://ruby-lang.org/"}
+The term h1 (h-one) means a level-one header. In HTML, this is the largest size of header.
+
